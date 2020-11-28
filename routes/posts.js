@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     try {
         const posts = await Post.find();
         res.json(posts);
+        console.log(posts);
     } catch (err) {
         res.send({ message: err });
     }
@@ -24,6 +25,7 @@ router.post('/', async (req, res) => {
     try {
         const savedPost = await post.save()
         res.json(savedPost);
+        console.log(savedPost);
     } catch (err) {
         res.json({ message: err })
     }
